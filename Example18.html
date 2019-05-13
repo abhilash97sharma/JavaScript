@@ -1,0 +1,16 @@
+<html>
+<head>
+<script>
+ function myfun(){
+ // document.write("In the body of myfun");  // refreshing the whole page
+  document.getElementById('sp1').innerHTML="Hello Abhilash Sharma<br>welcome";  // In the same page only
+  document.getElementById('div1').innerHTML="Hello Abhilash Sharma";
+ }
+</script>
+</head>
+<body>
+<div id="div1"></div>
+<span id="sp1" style="padding:20px;color:red;"></span>
+<input type="button" onclick="myfun()" value="click me">
+</body>
+</html>

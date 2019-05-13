@@ -1,0 +1,22 @@
+<html>
+<head>
+<script>
+function valid(){
+ var email=f1.text1.value;
+ var i1=email.indexOf("@");
+ var i2=email.indexOf(".");
+ var i3=email.indexOf(" ");
+ if(i1!=-1 && i1!=0 && i2!=0 && i2!=-1 && i3==-1)
+ alert('email seems to be correct');
+ else
+ alert('email seems to be wrong');
+}
+</script>
+</head>
+<body>
+<form name="f1">
+E-mail:<input type="text" name="text1"><br>
+<input type="button" name="button1" value="validate" onclick="valid()"><br>
+</form>
+</body>
+</html>

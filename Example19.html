@@ -1,0 +1,31 @@
+<html>
+<head>
+<script>
+function fun(){
+ document.getElementById('div1').innerHTML=document.getElementById('txt1').value
+}
+function fun1(){
+ document.getElementById('txt1').style.background="grey"; 
+}
+function fun2(){
+ document.getElementById('txt1').style.background="red";
+ document.getElementById('txt1').value=document.getElementById('txt1').value.toUpperCase();
+}
+function fun3(){
+ document.bgColor="green";
+}
+function fun4(){
+ document.bgColor="yellow";
+}
+function fun5(){
+ document.bgColor="orange";
+ document.getElementById('div2').innerHTML="You have selected a given text";
+}
+</script>
+</head>
+<body>
+ENTER YOUR NAME: <input type="text" id="txt1" oninput="fun()" onfocus="fun1()" onblur="fun2()" onkeydown="fun3()" onkeyup="fun4()" onselect="fun5()">
+<div id="div1"></div>
+<div id="div2"></div>
+</body>
+</html>

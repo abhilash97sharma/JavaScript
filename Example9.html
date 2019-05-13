@@ -1,0 +1,41 @@
+<html>
+<head>
+<script>
+ function mycolor(){
+ // alert(document.s1.selectedIndex);//not working
+    var opt=document.getElementById("sid").selectedIndex  //working
+	var con=confirm('Do you want to allow changes');
+    switch(opt){
+	 case 0:
+	  alert("please select any option");
+	  break;
+	 case 1:
+	  if(con)
+	   document.bgColor="blue";
+	  break;
+	 case 2:
+	  if(con)
+	   document.bgColor="red";
+	  break;
+     case 3:
+	  if(con)
+	   document.bgColor="green";
+	  break;
+     case 4:
+	  if(con)
+	   document.bgColor="yellow";
+	  break;
+	}
+ }
+</script>
+</head>
+<body>
+<select name="s1" id="sid" onchange="mycolor()">
+<option>select</option>
+<option>blue</option>
+<option>red</option>
+<option>green</option>
+<option>yellow</option>
+</select>
+</body>
+</html>

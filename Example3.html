@@ -1,0 +1,21 @@
+<html>
+<head>
+ <script>
+  sum=1;
+  function factorial(i){//variable declare inside the function argument is always a local variable and var keyword is not used it will generate error.
+    for(;i>1;i--)
+	 sum=sum*i;
+	// return sum;
+  }
+ </script>
+</head>
+<body>
+  <h1>Welcome to my page</h1>
+  <script>
+  var i=prompt("enter any no","4");  //declare variable global
+  factorial(i);
+  document.write("Factorial of a given no is:"+sum+"<br>");
+  document.write("value of i:"+i);
+  </script>
+</body>
+</html>

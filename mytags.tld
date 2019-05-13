@@ -1,0 +1,7 @@
+<taglib>
+  <tag>
+   <name>addition</name> 
+   <tag-class>package1.MyCustomAddition1</tag-class>
+   <body-content>empty</body-content>
+  </tag>
+</taglib>

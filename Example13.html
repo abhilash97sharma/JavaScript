@@ -1,0 +1,27 @@
+<html>
+<head>
+<script>
+function myValidation(){
+ var check=form1.text1.value.length;
+ var pwd=form1.pwd.value;
+ var repwd=form1.repwd.value;
+ if(pwd.localeCompare(repwd)==0)
+  alert("password are same");
+ else 
+  alert("Password are not same"); 
+ if(check==10)
+  alert('you entered a correct ph no');
+ else
+  alert('you entered a wrong ph no'); 
+}
+</script>
+</head>
+<body>
+<form name="form1">
+MOBILE NO:<input type="text" name="text1"><br>
+PASSWORD:<input type="password" name="pwd"><br>
+RE-PASSWORD:<input type="password" name="repwd"><br>
+<input type="button" name="button1" value ="click me" onclick="myValidation()" style="height:30px;width:200px"><br>
+</form>
+</body>
+</html>
