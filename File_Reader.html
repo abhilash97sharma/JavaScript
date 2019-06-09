@@ -1,0 +1,96 @@
+<html>
+<style>
+ table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: "1";
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<input type="file" name="file" id="file"/><br></br>
+<label>Query to Search</label>
+<input type="text" id="txt1" onKeyup="myfilter()" /><br></br>
+<div id="div1" style="background-color:lightblue;width:1865px;text-align:center;">
+</div>
+
+<script src="C:/Users/Abhilash Sharma/Desktop/desktop3/JAVA_SCRIPT EXAMPLES/jquery-3.4.1.min.js"></script>
+<script>
+document.getElementById('file').onchange = function(){
+  
+  var file = this.files[0];
+ // alert('In the javascript code');
+  var reader = new FileReader();
+  reader.onload = function(progressEvent){
+    // Entire file
+    //console.log(this.result);
+	//document.write(this.result);
+	var table='<table>';
+
+    // By lines
+    var lines = this.result.split('\n');
+	output = lines;
+	var out='';
+    for(var line = 0; line < lines.length; line++){
+    //  console.log(lines[line]);
+	//document.write(lines[line]);
+   //	 out = out+lines[line];
+   //  lines[line] = lines[line].replace('\"','');
+     table+='<tr>';
+     out1 = lines[line].split(',').length;
+     out2 = lines[line].split(',');
+	 for(var i1=0;i1 < out1;i1++){
+	    if(line == 0){
+		 table+='<th>'+out2[i1]+'</th>';
+		}
+		else{
+	    table+='<td>'+out2[i1]+'</td>';
+		}
+	 }
+	 table+='</tr>';
+    }
+	
+	table+='</table>'
+	document.getElementById('div1').innerHTML=table;
+	//document.getElementById('div1').innerHTML=out;
+	// document.write(out1);
+	//document.getElementById('p1').innerHTML=out3;
+  };
+  reader.readAsText(file);
+};
+
+function myfilter(){
+ //  document.write(output);
+     var txt1 = document.getElementById('txt1').value;
+	 var table='<table>'
+	 var heading = output[0].split(',');
+	 table+='<tr>';
+	 for(var i1=0;i1<heading.length;i1++){
+	    table+='<th>'+heading[i1]+'</th>';
+	 }
+	 table+='</tr>';
+	 for(var line = 1; line < output.length; line++){
+	   if(output[line].includes(txt1)){
+	     table+='<tr>';
+         out1 = output[line].split(',').length;
+         out2 = output[line].split(',');
+	     for(var i1=0;i1 < out1;i1++){
+	           table+='<td>'+out2[i1]+'</td>';
+	    }
+	      table+='</tr>';
+	   }
+	 }
+	 table+='</table>';
+	 document.getElementById('div1').innerHTML=table;
+}
+</script>
+</html>
